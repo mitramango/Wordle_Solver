@@ -102,4 +102,4 @@ for count in range(5):
 if result == "ggggg":
     print ("\n" + answers[corr_ind])
 else:
-    print ("\nHard luck!")
+    print ("\nBad luck!")
