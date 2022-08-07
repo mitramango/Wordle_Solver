@@ -41,14 +41,17 @@ for count in range(5):
             if indes not in already_green:
                 already_green.append(indes)
         elif result[indes] == "x":
-            for k in range(5):
-                if word[indes] in possible_letters[k] and len(possible_letters[k]) != 1:
-                    possible_letters[k].remove(word[indes])
+            continue
         elif result[indes] == "y":
             possible_letters[indes].remove(word[indes])
             dic[word[indes]] = dic[word[indes]] + 1
             if word[indes] not in tobechecked:
                 tobechecked.append(word[indes])
+    for indes in range(5):
+        if result[indes] == "x":
+            for k in range(5):
+                if word[indes] in possible_letters[k] and len(possible_letters[k]) != 1 and word[indes] not in tobechecked:
+                    possible_letters[k].remove(word[indes])
     toberemoved = []
     for s in range(len(word_list)):
         keep_checker = 1
