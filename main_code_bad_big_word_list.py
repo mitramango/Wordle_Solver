@@ -49,6 +49,8 @@ for count in range(5):
                 tobechecked.append(word[indes])
     for indes in range(5):
         if result[indes] == "x":
+            if word[indes] in possible_letters[indes]:
+                possible_letters[indes].remove(word[indes])
             for k in range(5):
                 if word[indes] in possible_letters[k] and len(possible_letters[k]) != 1 and word[indes] not in tobechecked:
                     possible_letters[k].remove(word[indes])
